@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { React } from 'react'
+import { Route, Switch } from 'react-router-dom'
+import { ThemeProvider } from 'styled-components'
+import GlobalStyles from './base/globalStyles'
+import { IconContext } from 'react-icons'
+import theme from './base/theme'
+import { Auth } from './View'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={theme()}>
+      <GlobalStyles />
+      <IconContext.Provider value={{ className: 'icon' }}>
+        <Switch>
+          <Route path="/auth" component={Auth} />
+        </Switch>
+      </IconContext.Provider>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+export default App

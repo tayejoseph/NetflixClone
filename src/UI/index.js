@@ -1,0 +1,5 @@
+export { default as Button } from './Button'
+export { default as InputGroup } from './InputGroup/styles'
+export { default as Spinner } from './Spinner'
+export { default as FloatingInput } from './FloatingInput'
+export { default as InputGroups } from './InputGroups'
